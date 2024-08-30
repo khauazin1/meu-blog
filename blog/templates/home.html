@@ -1,0 +1,22 @@
+{% extends 'global/base.html' %}
+
+{% block title %}Home - Khauã Nascimento{% endblock %}
+
+{% block content %}
+<div class="row align-items-center">
+    <div class="col-md-4 mb-4">
+        {% if info_pessoal.imagem %}
+            <img src="{{ info_pessoal.imagem.url }}" alt="{{ info_pessoal.nome }}" class="img-fluid rounded-circle">
+        {% endif %}
+    </div>
+    <div class="col-md-8">
+        <h1 class="mb-4">Bem-vindo ao meu blog pessoal!</h1>
+        {% if info_pessoal %}
+            <h2>{{ info_pessoal.nome }}</h2>
+            <p>{{ info_pessoal.descricao_curta }}</p>
+        {% endif %}
+        <p>Aqui você encontrará informações sobre meus cursos, interesses e um pouco mais sobre mim.</p>
+        <p>Fique à vontade para explorar as diferentes seções do site!</p>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+
+{% extends 'global/base.html' %}
+
+{% block title %}Cursos - Khauã Nascimento{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Meus Cursos</h1>
+<div class="row">
+    {% for curso in cursos %}
+    <div class="col-md-4 mb-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ curso.nome }}</h5>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <p>Nenhum curso cadastrado ainda.</p>
+    {% endfor %}
+</div>
+{% endblock %}

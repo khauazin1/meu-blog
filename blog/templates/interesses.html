@@ -1,0 +1,21 @@
+{% extends 'global/base.html' %}
+
+{% block title %}Interesses - Khauã Nascimento{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Meus Interesses</h1>
+<div class="row">
+    {% for interesse in interesses %}
+    <div class="col-md-6 mb-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ interesse.nome }}</h5>
+                <p class="card-text">{{ interesse.descricao }}</p>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <p>Nenhum interesse cadastrado ainda.</p>
+    {% endfor %}
+</div>
+{% endblock %}
